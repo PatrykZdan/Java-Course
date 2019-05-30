@@ -150,7 +150,50 @@ public class Game {
      */
     public String checkGameWinner(char [][]grid){
         String result = "None";
-        //Student code goes here ...
+
+        for (int i = 0; i < 3; i++) {
+            if (grid[i][0]=='-'||grid[i][1]=='-'||grid[i][2]=='-'){
+                result = "None";
+                break;
+            } else {
+                result = "Tie";
+            }
+        }
+
+        for (int i = 0; i <3 ; i++) {
+            if(grid[i][0]=='x'&&grid[i][1]=='x'&&grid[i][2]=='x'){
+                result = "X wins";
+            }
+
+            if(grid[i][0]=='o'&&grid[i][1]=='o'&&grid[i][2]=='o'){
+                result = "O wins";
+            }
+
+            if(grid[0][i]=='x'&&grid[1][i]=='x'&&grid[2][i]=='x'){
+                result = "X wins";
+            }
+
+            if(grid[0][i]=='o'&&grid[1][i]=='o'&&grid[2][i]=='o'){
+                result = "O wins";
+            }
+        }
+
+        if(grid[0][0]=='x'&&grid[1][1]=='x'&&grid[2][2]=='x'){
+            result = "X wins";
+        }
+
+        if(grid[0][2]=='x'&&grid[1][1]=='x'&&grid[2][0]=='x'){
+            result = "X wins";
+        }
+
+        if(grid[0][0]=='o'&&grid[1][1]=='o'&&grid[2][2]=='o'){
+            result = "O wins";
+        }
+
+        if(grid[0][2]=='o'&&grid[1][1]=='o'&&grid[2][0]=='o'){
+            result = "O wins";
+        }
+
         return result;
     }
 
